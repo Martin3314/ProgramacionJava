@@ -21,7 +21,8 @@ public class ProgramacionJava {
         System.out.println("Si, ya lo he detectado");
         
         Scanner scanner = new Scanner(System.in);
-        
+
+        System.out.println("Introduce un numero");
         int numero = scanner.nextInt();
         scanner.nextLine();
         
