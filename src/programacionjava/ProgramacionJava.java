@@ -4,6 +4,8 @@
  */
 package programacionjava;
 
+import java.util.Scanner;
+
 /**
  *
  * @author josema
@@ -17,6 +19,16 @@ public class ProgramacionJava {
         
         System.out.println("Hola GitHub! ¿Detectas este cambio?");
         System.out.println("Si, ya lo he detectado");
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        int numero = scanner.nextInt();
+        scanner.nextLine();
+        
+        if (numero % 2 == 0) System.out.println("Es par");
+        else System.out.println("Es impar");
+        
+        
         
     }
     
