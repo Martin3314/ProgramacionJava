@@ -4,12 +4,23 @@
  */
 package programacionjava;
 
+import java.util.Random;
+
 /**
  *
  * @author josema
  */
 public class Adivinanza {
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Random r = new Random();
+        int valorDado = r.nextInt(100)+1;
+        
+        int i = 0;
+        while(i<50) {
+            System.out.println("Aleatorio: " + (r.nextInt(100)+1));
+            i++;
+        }
     }
+    
 }
