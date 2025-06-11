@@ -21,26 +21,25 @@ public class ProgramacionJava {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        // Opciones posibles
         String[] opciones = {"piedra", "papel", "tijera"};
 
         System.out.println("Bienvenido al juego Piedra, Papel o Tijera");
         System.out.print("Elige una opción (piedra, papel o tijera): ");
         String usuario = scanner.nextLine().toLowerCase();
 
-        // Validar la entrada del usuario
+        
         while (!usuario.equals("piedra") && !usuario.equals("papel") && !usuario.equals("tijera")) {
             System.out.print("Entrada inválida. Por favor, elige piedra, papel o tijera: ");
             usuario = scanner.nextLine().toLowerCase();
         }
 
-        // Elección aleatoria del ordenador
+        
         int indiceOrdenador = random.nextInt(3);
         String ordenador = opciones[indiceOrdenador];
 
         System.out.println("El ordenador eligió: " + ordenador);
 
-        // Determinar el ganador
+       
         if (usuario.equals(ordenador)) {
             System.out.println("¡Empate!");
         } else if (
