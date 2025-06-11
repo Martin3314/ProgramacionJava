@@ -5,22 +5,39 @@
 package programacionjava;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
- * @author josema
+ * @author pc41
  */
 public class Adivinanza {
-    public static void main(String[] args) {
-        
-        Random r = new Random();
-        int valorDado = r.nextInt(100)+1;
-        
-        int i = 0;
-        while(i<50) {
-            System.out.println("Aleatorio: " + (r.nextInt(100)+1));
-            i++;
+    
+        public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+           int numeroSecreto = (int)(Math.random() * 100) + 1;
+        int intento = 0;
+        int contadorIntentos = 0;
+
+        System.out.println("¡Bienvenido al juego de adivinanza!");
+        System.out.println("Estoy pensando en un número del 1 al 100. ¿Puedes adivinar cuál es?");
+
+        // Bucle hasta que el usuario adivine
+        do {
+            System.out.print("Introduce tu número: ");
+            intento = sc.nextInt();
+            contadorIntentos++;
+
+            if (intento < numeroSecreto) {
+                System.out.println("El número secreto es mayor.");
+            } else if (intento > numeroSecreto) {
+                System.out.println("El número secreto es menor.");
+            } else {
+                System.out.println("¡Correcto! Has adivinado el número en " + contadorIntentos + " intentos.");
+            }
+        } while (intento != numeroSecreto);
+
+     
         }
     }
-    
-}
+

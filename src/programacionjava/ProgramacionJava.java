@@ -4,6 +4,7 @@
  */
 package programacionjava;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -17,20 +18,46 @@ public class ProgramacionJava {
      */
     public static void main(String[] args) {
         
-        System.out.println("Hola GitHub! ¿Detectas este cambio?");
-        System.out.println("Si, ya lo he detectado");
-        
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
 
-        System.out.println("Introduce un numero");
-        int numero = scanner.nextInt();
-        scanner.nextLine();
-        
-        if (numero % 2 == 0) System.out.println("Es par");
-        else System.out.println("Es impar");
-        
-        
-        
+        // Opciones posibles
+        String[] opciones = {"piedra", "papel", "tijera"};
+
+        System.out.println("Bienvenido al juego Piedra, Papel o Tijera");
+        System.out.print("Elige una opción (piedra, papel o tijera): ");
+        String usuario = scanner.nextLine().toLowerCase();
+
+        // Validar la entrada del usuario
+        while (!usuario.equals("piedra") && !usuario.equals("papel") && !usuario.equals("tijera")) {
+            System.out.print("Entrada inválida. Por favor, elige piedra, papel o tijera: ");
+            usuario = scanner.nextLine().toLowerCase();
+        }
+
+        // Elección aleatoria del ordenador
+        int indiceOrdenador = random.nextInt(3);
+        String ordenador = opciones[indiceOrdenador];
+
+        System.out.println("El ordenador eligió: " + ordenador);
+
+        // Determinar el ganador
+        if (usuario.equals(ordenador)) {
+            System.out.println("¡Empate!");
+        } else if (
+            (usuario.equals("piedra") && ordenador.equals("tijera")) ||
+            (usuario.equals("papel") && ordenador.equals("piedra")) ||
+            (usuario.equals("tijera") && ordenador.equals("papel"))
+        ) {
+            System.out.println("¡Ganaste!");
+        } else {
+            System.out.println("¡Perdiste!");
+        }
+
+  
     }
-    
 }
+        
+        
+    
+    
+
